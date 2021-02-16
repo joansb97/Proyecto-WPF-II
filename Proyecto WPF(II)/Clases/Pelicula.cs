@@ -9,29 +9,75 @@ namespace Proyecto_WPF_II_.Clases
 {
     class Pelicula : INotifyPropertyChanged
     {
-        string _nombre;
-        public string Nombre 
+        int _idPelicula;
+        public int IdPelicula
         {
-            get { return _nombre; }
-            set { _nombre = value; }
+            get { return _idPelicula; }
+            set 
+            { 
+                _idPelicula = value;
+                this.NotifyPropertyChanged("IdPelicula");
+            }
         }
-        string _imagen;
-        public string Imagen 
+        string _titulo;
+        public string Titulo 
         {
-            get { return _imagen; }
-            set { _imagen = value; }
+            get { return _titulo; }
+            set 
+            { 
+                _titulo = value;
+                this.NotifyPropertyChanged("Titulo");
+            }
+        }
+        string _cartel;
+        public string Cartel 
+        {
+            get { return _cartel; }
+            set 
+            { 
+                _cartel = value;
+                this.NotifyPropertyChanged("Cartel");
+            }
+        }
+        int _anyo;
+        public int Anyo
+        {
+            get { return _anyo; }
+            set 
+            {
+                _anyo = value;
+                this.NotifyPropertyChanged("Anyo");
+            }
         }
         string _genero;
         public string Genero 
         {
             get { return _genero; }
-            set { _genero = value; }
+            set 
+            { 
+                _genero = value;
+                this.NotifyPropertyChanged("Genero");
+            }
         }
         string _calificacion;
         public string Calificacion
         {
             get { return _calificacion; }
-            set { _calificacion = value; }
+            set 
+            { 
+                _calificacion = value;
+                _calificacion = value; this.NotifyPropertyChanged("Calificacion");
+            }
+        }
+        public Pelicula() { }
+        public Pelicula(int id, string titulo, string cartel, int anyo, string genero, string calificacion)
+        {
+            IdPelicula = id;
+            Titulo = titulo;
+            Cartel = cartel;
+            Anyo = anyo;
+            Genero = genero;
+            Calificacion = calificacion;
         }
 
         public void NotifyPropertyChanged(string propertyName)

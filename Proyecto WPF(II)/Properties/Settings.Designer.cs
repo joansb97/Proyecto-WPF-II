@@ -49,9 +49,10 @@ namespace Proyecto_WPF_II_.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Drawing.Color Color {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Color {
             get {
-                return ((global::System.Drawing.Color)(this["Color"]));
+                return ((string)(this["Color"]));
             }
             set {
                 this["Color"] = value;

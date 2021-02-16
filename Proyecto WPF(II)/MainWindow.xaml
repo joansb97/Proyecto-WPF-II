@@ -6,13 +6,26 @@
         xmlns:local="clr-namespace:Proyecto_WPF_II_"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.CommandBindings>
+        <CommandBinding Command="local:CustomCommands.Salir" Executed="CommandBindigSalir_Executed"/>
+        <CommandBinding Command="local:CustomCommands.modifyCine" Executed="CommandBindingModificarCine_Executed"/>
+    </Window.CommandBindings>
     <DockPanel>
-        <Menu>
-            <MenuItem Header="Editar">
-                <MenuItem Header="Nombre"></MenuItem>
-                <MenuItem Header="Imagen"></MenuItem>
-                <MenuItem Header="Color Principal"></MenuItem>
-            </MenuItem>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Editar Cine" Command="local:CustomCommands.modifyCine"></MenuItem>
+            <MenuItem Header="Salir" Command="local:CustomCommands.Salir"></MenuItem>
         </Menu>
+        <StackPanel>
+            <TextBlock x:Name="nombreCineTextBox" Text="{Binding Path=Nombre}"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="gestionButton" Grid.Column="0" Content="Gestionar" Click="gestionarButton_Click"/>
+                <Button x:Name="ventaButton" Grid.Column="1" Content="Venta" Click="ventaButton_Click"/>
+            </Grid>
+            <Image Source="{Binding Path=Imagen}"/>
+        </StackPanel>
     </DockPanel>
 </Window>

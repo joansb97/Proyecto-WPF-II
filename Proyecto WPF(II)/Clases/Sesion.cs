@@ -10,37 +10,44 @@ namespace Proyecto_WPF_II_.Clases
 {
     class Sesion:INotifyPropertyChanged
     {
-        Pelicula _pelicula;
-        public Pelicula pelicula
+        int _idSesion;
+        public int IdSesion
+        {
+            get { return _idSesion; }
+            set
+            {
+                _idSesion = value;
+                this.NotifyPropertyChanged("IdSesion");
+            }
+        }
+        int _pelicula;
+        public int pelicula
         {
             get { return _pelicula; }
-            set { _pelicula = value; }
+            set
+            {
+                _pelicula = value;
+                this.NotifyPropertyChanged("Pelicula");
+            }
         }
-        Sala _sala;
-        public Sala sala
+        int _sala;
+        public int sala
         {
             get { return _sala; }
-            set { _sala = value; }
-        }
-        int ventas;
-
-        public Sesion() { }
-        public Sesion(Pelicula pelicula, Sala sala)
-        {
-            this.pelicula = pelicula;
-            this.sala = sala;
-            ventas = 0;
-        }
-        public void VentaEntradas(int entradas)
-        {
-            int aux = ventas + entradas;
-            if(sala.Capacidad <= aux)
+            set
             {
-                MessageBox.Show("No hay suficiente capacidad para vender tantas entradas","Error",MessageBoxButton.OK,MessageBoxImage.Warning);
-            }else
+                _sala = value;
+                this.NotifyPropertyChanged("Sala");
+            }
+        }
+        string _hora;
+        public string Hora
+        {
+            get { return _hora; }
+            set
             {
-                ventas = aux;
-                MessageBox.Show("Venta realizada", "Todo correcto", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                _hora = value;
+                this.NotifyPropertyChanged("Hora");
             }
         }
 

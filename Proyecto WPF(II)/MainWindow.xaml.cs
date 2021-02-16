@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_WPF_II_.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,20 @@ namespace Proyecto_WPF_II_
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainWindowVM _vm;
         public MainWindow()
         {
+            _vm = new MainWindowVM();
             InitializeComponent();
+            DataContext = _vm;
+        }
+        private void CommandBindigSalir_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+        private void CommandBindingModificarCine_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            _vm.CambiaCine();
         }
     }
 }

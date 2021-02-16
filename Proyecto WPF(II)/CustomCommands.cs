@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Proyecto_WPF_II_.Clases
 {
-    class CustomCommands
+    public static class CustomCommands
     {
         public static readonly RoutedUICommand addPelicula = new RoutedUICommand(
             "Añadir Pelicula",
@@ -81,31 +81,22 @@ namespace Proyecto_WPF_II_.Clases
                 new KeyGesture(Key.L, ModifierKeys.Control)
             }
             );
-        public static readonly RoutedUICommand modifyNombre = new RoutedUICommand(
-            "Modificar Nombre",
-            "Modificar Nombre",
-            typeof(CustomCommands),
-            new InputGestureCollection
-            {
-                new KeyGesture(Key.N, ModifierKeys.Control)
-            }
-            );
-        public static readonly RoutedUICommand modifyImagen = new RoutedUICommand(
-            "Modificar Imagen",
-            "Modificar Imagen",
-            typeof(CustomCommands),
-            new InputGestureCollection
-            {
-                new KeyGesture(Key.M, ModifierKeys.Control)
-            }
-            );
-        public static readonly RoutedUICommand modifyColor = new RoutedUICommand(
-            "Modificar Color",
-            "Modificar Color",
+        public static readonly RoutedUICommand modifyCine = new RoutedUICommand(
+            "Modificar Cine",
+            "Modificar Cine",
             typeof(CustomCommands),
             new InputGestureCollection
             {
                 new KeyGesture(Key.C, ModifierKeys.Control)
+            }
+            );
+        public static readonly RoutedUICommand Salir = new RoutedUICommand(
+            "Salir",
+            "Salir",
+            typeof(CustomCommands),
+            new InputGestureCollection
+            {
+                new KeyGesture(Key.A, ModifierKeys.Control)
             }
             );
     }

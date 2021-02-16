@@ -1,0 +1,33 @@
+﻿<Window x:Class="Proyecto_WPF_II_.CambiaCine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto_WPF_II_"
+        mc:Ignorable="d"
+        Title="CambiaCine" Height="200" Width="400">
+    <Window.Resources>
+        <Style x:Key="cineButton" TargetType="Button">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style x:Key="cineTextBlock" TargetType="TextBlock">
+            <Setter Property="Margin" Value="10,2"/>
+        </Style>
+        <Style x:Key="cineTextBox" TargetType="TextBox">
+            <Setter Property="Margin" Value="10,2"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel>
+        <TextBlock Text="Nombre del Cine:" Style="{StaticResource cineTextBlock}"/>
+        <TextBox Style="{StaticResource cineTextBox}" Text="{Binding Path=nombre}"/>
+        <TextBlock Text="Imagen del Cine:" Style="{StaticResource cineTextBlock}"/>
+        <TextBox Style="{StaticResource cineTextBox}" Text="{Binding Path=imagen}"/>
+        <TextBlock Text="Color principal del Cine:" Style="{StaticResource cineTextBlock}"/>
+        <TextBox Style="{StaticResource cineTextBox}" Text="{Binding Path=color}"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Aceptar" Style="{StaticResource cineButton}" Click="aceptarButton_Click"/>
+            <Button Content="Cancelar" Style="{StaticResource cineButton}"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

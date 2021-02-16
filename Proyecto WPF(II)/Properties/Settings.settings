@@ -8,7 +8,7 @@
     <Setting Name="Imagen" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Color" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="Color" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>
